@@ -8,6 +8,7 @@ tell where the moon is now, and where it's going to be in the future.
   camera goes there and looks up
 - UI
     - add time controls: speed, pause, set date + time
+- make the sun visible
 - tilt earth
 - tilt moon, incline orbit
 - rotate moon
