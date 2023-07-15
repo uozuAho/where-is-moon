@@ -45,20 +45,17 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\PlayerCameraController.cs" />
+     <Compile Include="Assets\PlayerController.cs" />
      <Compile Include="Assets\MoonController.cs" />
-     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\SpaceCameraController.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Planets of the Solar System 3D\Textures" />
      <Folder Include="Assets\Planets of the Solar System 3D\Textures\FX" />
-     <Folder Include="Assets\Planets of the Solar System 3D\Settings" />
-     <Folder Include="Assets\Planets of the Solar System 3D\Shaders" />
-     <Folder Include="Assets\Planets of the Solar System 3D\Scenes" />
-     <Folder Include="Assets\Planets of the Solar System 3D\Geometry" />
      <Folder Include="Assets\Planets of the Solar System 3D\Textures\Planets\Materials" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Planets of the Solar System 3D\Textures\Planets" />
-     <Folder Include="Assets\Planets of the Solar System 3D\Prefabs" />
      <Folder Include="Assets\Planets of the Solar System 3D" />
      <Folder Include="Assets\Planets of the Solar System 3D\Materials" />
      <Reference Include="UnityEngine">

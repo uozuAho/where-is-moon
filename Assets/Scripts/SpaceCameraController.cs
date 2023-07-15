@@ -1,22 +1,22 @@
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class SpaceCameraController : MonoBehaviour
 {
-    Vector2 rotation = Vector2.zero;
-    float lookSpeed = 3f;
-    
+    private Vector2 rotation = Vector2.zero;
+    private float lookSpeed = 3f;
+
     void Start()
     {
-        
+
     }
 
     void Update()
     {
         var horiz = Input.GetAxis("Horizontal");
         var vert = Input.GetAxis("Vertical");
-        
+
         transform.Translate(horiz * 0.1f, 0f, vert * 0.1f);
-        
+
         var mouseX = Input.GetAxis("Mouse X");
         var mouseY = Input.GetAxis("Mouse Y");
         rotation.x -= mouseY;
@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
         // why are the above axes reversed?
         // I think cos we're rotating around those axes, not moving along them
         // see https://docs.unity3d.com/ScriptReference/Input.GetAxis.html
-        
+
         // LOL here's the answer from GitHub copilot:
         // "Because that's how Unity does it.
         //  Don't ask me, I just work here.
