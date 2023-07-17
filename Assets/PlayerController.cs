@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Vector2 rotation = Vector2.zero;
     private float lookSpeed = 3f;
 
     private float mouseXLast = 0f;
     private float mouseYLast = 0f;
+    private Vector3 _playerUp;
 
     void Start()
     {
-
     }
 
     void Update()
@@ -20,7 +19,7 @@ public class PlayerController : MonoBehaviour
         var deltaMouseX = mouseX - mouseXLast;
         var deltaMouseY = mouseY - mouseYLast;
 
-        transform.Rotate(transform.up, deltaMouseX * lookSpeed);
-        transform.Rotate(transform.right, deltaMouseY * lookSpeed);
+        transform.Rotate(Vector3.up, deltaMouseX * lookSpeed);
+        transform.Rotate(Vector3.right, -deltaMouseY * lookSpeed);
     }
 }
