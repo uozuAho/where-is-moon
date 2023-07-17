@@ -5,7 +5,6 @@ tell where the moon is now, and where it's going to be in the future.
 
 # todo
 - tilt moon, incline orbit
-- rotate earth
 - incline earth orbit
 - add time controls
     - speed, pause
@@ -27,3 +26,8 @@ tell where the moon is now, and where it's going to be in the future.
 - start from space
     - position camera on Earth surface & look up, eg. double click on a city,
       camera goes there and looks up
+
+# stuff learned to make this work
+- [ecliptic](https://en.wikipedia.org/wiki/Ecliptic)
+    - the plane formed by Earth's orbit around the sun
+    - Earth's rotational axis is about 23.4 degrees off the ecliptic
