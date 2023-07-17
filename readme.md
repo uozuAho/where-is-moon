@@ -4,11 +4,10 @@ Realistically simulate the Moon's position relative to Earth, so that you can
 tell where the moon is now, and where it's going to be in the future.
 
 # todo
-- make the sun visible
-- restrict up/down look to 90 degrees
 - tilt earth
 - tilt moon, incline orbit
 - rotate earth
+- incline earth orbit
 - add time controls
     - speed, pause
 - rotate moon
@@ -16,6 +15,7 @@ tell where the moon is now, and where it's going to be in the future.
 
 # later/maybe
 - move player
+- restrict up/down look to 90 degrees
 - ui: show where player is on 2d earth map
 - ui: add compass
 - ui: show current lat long
