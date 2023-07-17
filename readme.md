@@ -4,12 +4,12 @@ Realistically simulate the Moon's position relative to Earth, so that you can
 tell where the moon is now, and where it's going to be in the future.
 
 # todo
+- fix moon's orbit direction (currently retrograde, should be prograde)
+- orbit earth around sun
 - tilt moon, incline orbit
-- incline earth orbit
 - add time controls
     - speed, pause
 - rotate moon
-- orbit earth around sun (or simulate)
 
 # later/maybe
 - move player
@@ -31,3 +31,9 @@ tell where the moon is now, and where it's going to be in the future.
 - [ecliptic](https://en.wikipedia.org/wiki/Ecliptic)
     - the plane formed by Earth's orbit around the sun
     - Earth's rotational axis is about 23.4 degrees off the ecliptic
+- the Moon orbits the Earth about once every 27.32 days, relative to the stars (
+  or the Unity editor)
+    - it orbits in a prograde direction - the same direction as the rotation of
+      the Earth
+    - https://en.wikipedia.org/wiki/Orbit_of_the_Moon
+    - https://en.wikipedia.org/wiki/Retrograde_and_prograde_motion
