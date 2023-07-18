@@ -4,19 +4,23 @@ Realistically simulate the Moon's position relative to Earth, so that you can
 tell where the moon is now, and where it's going to be in the future.
 
 # todo
+- start the sim at 'now'
 - add time controls
     - speed, pause
+- fix light: should be spot/point from sun, not directional
 - tilt moon, incline orbit
 - rotate moon
 
 # later/maybe
+- ui: add compass
+- ui: show the current time
+- ui: show the current date
 - move player
 - restrict up/down look to 90 degrees
 - ui: show where player is on 2d earth map
-- ui: add compass
 - ui: show current lat long
-- ui: show the current time
 - ui: user can set date and time
+- simulate libration: https://en.wikipedia.org/wiki/Libration
 - the moon's not currently to scale. Why does it look so small from Earth?
     - camera FOV? zooming in makes everything else look huge
 - how to credit asset creators?

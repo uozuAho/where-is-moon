@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class TimeController : MonoBehaviour
 {
-    public const float MaxRate = 100 * InternalRate;
+    public const float MaxRate = OneDayPerSecond;
+    public const float OneDayPerSecond = 100 * InternalRate;
+    public const float OneDayPerMinute = OneDayPerSecond / 60;
 
     // Number of sim seconds pass per 1 real second. This allows
     // settings fast enough time rates to see the Earth & Moon
@@ -11,7 +13,7 @@ public class TimeController : MonoBehaviour
 
     void Start()
     {
-        SetTimeRate(MaxRate);
+        SetTimeRate(OneDayPerMinute);
     }
 
     void Update()
