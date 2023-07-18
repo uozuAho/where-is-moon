@@ -4,11 +4,9 @@ Realistically simulate the Moon's position relative to Earth, so that you can
 tell where the moon is now, and where it's going to be in the future.
 
 # todo
-- start the sim at 'now'
-    - correct moon orbit
 - add time controls
     - speed, pause
-- fix light: should be spot/point from sun, not directional
+- fix moon orbit position so that it's correct relative to real time
 - tilt moon, incline orbit
 - rotate moon
 
