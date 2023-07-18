@@ -16,7 +16,7 @@ public class MoonController : MonoBehaviour
     void Update()
     {
         transform.position = _earth.transform.position + new Vector3(
-            Mathf.Sin(Time.time * orbitSpeed) * _distanceFromEarth,
+            -Mathf.Sin(Time.time * orbitSpeed) * _distanceFromEarth,
             0f,
             Mathf.Cos(Time.time * orbitSpeed) * _distanceFromEarth
         );
