@@ -13,7 +13,7 @@ public class TimeController : MonoBehaviour
     private const float InternalRate = 864;
 
     private float _secondsSinceYearStart;
-    // 'zero time' earth position around sun is 0, 0, 60, equinox heading towards south pole summer
+
     // 'zero time' earth rotation is midday over Santa Cruz, Equador, -0.7869498837733746, -90.33499760536569
 
     void Start()

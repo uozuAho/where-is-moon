@@ -24,7 +24,11 @@ public class EarthController : MonoBehaviour
 
     private void OrbitSun()
     {
-        var radians = Math.PI * 2 * _timeController.YearsSinceYearStart();
+        // 'zero' earth pos = (0, 0, 60), equinox, heading towards south pole summer
+        // need to correct this to be 12am, 1st Jan, which is roughly pi/2 radians
+        // from zero position
+
+        var radians = Math.PI/2 + Math.PI * 2 * _timeController.YearsSinceYearStart();
 
         transform.position = _sun.transform.position + new Vector3(
             -Mathf.Sin((float)radians) * _distanceFromSun,
