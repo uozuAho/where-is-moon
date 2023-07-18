@@ -39,8 +39,10 @@ public class EarthController : MonoBehaviour
 
     private void Rotate()
     {
+        // 'zero' rotation is ~-90 longitude. Need to add 90 degrees.
+
         transform.rotation = _initialRotation * Quaternion.AngleAxis(
-            -360 * _timeController.DaysSinceYearStart(),
+            90 - 360 * _timeController.DaysSinceYearStart(),
             Vector3.up);
     }
 }

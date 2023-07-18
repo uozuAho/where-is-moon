@@ -5,8 +5,7 @@ tell where the moon is now, and where it's going to be in the future.
 
 # todo
 - start the sim at 'now'
-    - correct earth rotation
-    - correct moon rotation
+    - correct moon orbit
 - add time controls
     - speed, pause
 - fix light: should be spot/point from sun, not directional

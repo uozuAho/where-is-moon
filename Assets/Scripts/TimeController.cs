@@ -19,7 +19,7 @@ public class TimeController : MonoBehaviour
     void Start()
     {
         SetTimeRate(OneDayPerMinute);
-        var timeSinceStartOfYear = DateTime.Now - new DateTime(DateTime.Now.Year, 1, 1);
+        var timeSinceStartOfYear = DateTime.UtcNow - new DateTime(DateTime.Now.Year, 1, 1);
         _secondsSinceYearStart = (float)timeSinceStartOfYear.TotalSeconds;
     }
 
