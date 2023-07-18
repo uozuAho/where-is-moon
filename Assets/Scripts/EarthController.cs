@@ -24,7 +24,7 @@ public class EarthController : MonoBehaviour
 
     private void OrbitSun()
     {
-        var radians = Math.PI * 2 * _timeController.YearsSinceStart();
+        var radians = Math.PI * 2 * _timeController.YearsSinceYearStart();
 
         transform.position = _sun.transform.position + new Vector3(
             -Mathf.Sin((float)radians) * _distanceFromSun,
@@ -36,7 +36,7 @@ public class EarthController : MonoBehaviour
     private void Rotate()
     {
         transform.rotation = _initialRotation * Quaternion.AngleAxis(
-            -360 * _timeController.DaysSinceStart(),
+            -360 * _timeController.DaysSinceYearStart(),
             Vector3.up);
     }
 }

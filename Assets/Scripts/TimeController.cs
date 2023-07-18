@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TimeController : MonoBehaviour
@@ -6,14 +7,20 @@ public class TimeController : MonoBehaviour
     public const float OneDayPerSecond = 100 * InternalRate;
     public const float OneDayPerMinute = OneDayPerSecond / 60;
 
-    // Number of sim seconds pass per 1 real second. This allows
-    // settings fast enough time rates to see the Earth & Moon
+    // Number of sim seconds per 1 real second. This allows
+    // setting fast enough time rates to see the Earth & Moon
     // move.
     private const float InternalRate = 864;
+
+    private float _secondsSinceYearStart;
+    // 'zero time' earth position around sun is 0, 0, 60, equinox heading towards south pole summer
+    // 'zero time' earth rotation is midday over Santa Cruz, Equador, -0.7869498837733746, -90.33499760536569
 
     void Start()
     {
         SetTimeRate(OneDayPerMinute);
+        var timeSinceStartOfYear = DateTime.Now - new DateTime(DateTime.Now.Year, 1, 1);
+        _secondsSinceYearStart = (float)timeSinceStartOfYear.TotalSeconds;
     }
 
     void Update()
@@ -21,19 +28,19 @@ public class TimeController : MonoBehaviour
 
     }
 
-    public float SecondsSinceStart()
+    public float SecondsSinceYearStart()
     {
-        return Time.time * InternalRate;
+        return Time.time * InternalRate + _secondsSinceYearStart;
     }
 
-    public float DaysSinceStart()
+    public float DaysSinceYearStart()
     {
-        return SecondsSinceStart() / 86400;
+        return SecondsSinceYearStart() / 86400;
     }
 
-    public float YearsSinceStart()
+    public float YearsSinceYearStart()
     {
-        return SecondsSinceStart() / (86400 * 365);
+        return SecondsSinceYearStart() / (86400 * 365);
     }
 
     /// <summary>
