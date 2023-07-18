@@ -50,4 +50,10 @@ public class TimeController : MonoBehaviour
     {
         Time.timeScale = rate / InternalRate;
     }
+
+    public DateTime CurrentUtcTime()
+    {
+        return new DateTime(DateTime.UtcNow.Year, 1, 1, 0, 0, 0, DateTimeKind.Utc)
+            .AddSeconds(SecondsSinceYearStart());
+    }
 }

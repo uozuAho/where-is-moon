@@ -12,8 +12,6 @@ tell where the moon is now, and where it's going to be in the future.
 
 # later/maybe
 - ui: add compass
-- ui: show the current time
-- ui: show the current date
 - move player
 - restrict up/down look to 90 degrees
 - ui: show where player is on 2d earth map
