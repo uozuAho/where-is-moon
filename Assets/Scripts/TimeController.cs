@@ -24,11 +24,6 @@ public class TimeController : MonoBehaviour
         _secondsSinceYearStart = (float)timeSinceStartOfYear.TotalSeconds;
     }
 
-    void Update()
-    {
-
-    }
-
     public float SecondsSinceYearStart()
     {
         return Time.time * InternalRate + _secondsSinceYearStart;

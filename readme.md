@@ -4,7 +4,6 @@ Realistically simulate the Moon's position relative to Earth, so that you can
 tell where the moon is now, and where it's going to be in the future.
 
 # todo
-- ui: spacebar pauses/plays
 - ui: time forward/back slider
 - fix moon orbit position so that it's correct relative to real time
 - tilt moon, incline orbit

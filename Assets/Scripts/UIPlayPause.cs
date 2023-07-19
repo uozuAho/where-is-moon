@@ -13,6 +13,14 @@ public class UIPlayPause : MonoBehaviour
         _toggle.onValueChanged.AddListener(OnChanged);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _toggle.isOn = !_toggle.isOn;
+        }
+    }
+
     void OnChanged(bool on)
     {
         if (on) _timeController.Play();
