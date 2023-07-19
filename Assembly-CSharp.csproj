@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\TimeController.cs" />
+     <Compile Include="Assets\Scripts\UIPlayPause.cs" />
      <Compile Include="Assets\UITextController.cs" />
      <Compile Include="Assets\Scripts\SpaceCameraController.cs" />
      <Compile Include="Assets\Scripts\EarthController.cs" />

@@ -13,6 +13,7 @@ public class TimeController : MonoBehaviour
     private const float InternalRate = 864;
 
     private float _secondsSinceYearStart;
+    private float _prePauseTimeScale;
 
     // 'zero time' earth rotation is midday over Santa Cruz, Equador, -0.7869498837733746, -90.33499760536569
 
@@ -55,5 +56,16 @@ public class TimeController : MonoBehaviour
     {
         return new DateTime(DateTime.UtcNow.Year, 1, 1, 0, 0, 0, DateTimeKind.Utc)
             .AddSeconds(SecondsSinceYearStart());
+    }
+
+    public void Pause()
+    {
+        _prePauseTimeScale = Time.timeScale;
+        Time.timeScale = 0;
+    }
+
+    public void Play()
+    {
+        Time.timeScale = _prePauseTimeScale;
     }
 }
