@@ -63,4 +63,14 @@ public class TimeController : MonoBehaviour
     {
         Time.timeScale = _prePauseTimeScale;
     }
+
+    public DateTime LastDecSolstice()
+    {
+        return new DateTime(2022, 12, 21, 21, 48, 0, DateTimeKind.Utc);
+    }
+
+    public double SecondsSinceDecSolstice()
+    {
+        return (CurrentUtcTime() - LastDecSolstice()).TotalSeconds;
+    }
 }

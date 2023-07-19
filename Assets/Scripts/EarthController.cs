@@ -44,14 +44,21 @@ public class EarthController : MonoBehaviour
 
     private void Rotate()
     {
-        // 'zero' rotation is ~-90 longitude. Need to add 90 degrees to start at UTC midnight.
-        const int offset = 90;
+        // 'zero' rotation in Unity is Sun over ~-90 longitude
+        // rotate by -90 sets Earth to 12am UTC
+        var offset = -90;
+
+        var lastDecSolstice = _timeController.LastDecSolstice();
+        var rotationAtLastSolstice = (float)lastDecSolstice.TimeOfDay.TotalDays * 360;
+
         const int secondsPerSiderealDay = 23 * 3600 + 56 * 60;
-        var siderealDays = _timeController.SecondsSinceYearStart() / secondsPerSiderealDay;
-        var degreesRotated = siderealDays * 360;
+        var siderealDays = _timeController.SecondsSinceDecSolstice() / secondsPerSiderealDay;
+        var rotatedSinceSolstice = siderealDays * 360;
+
+        var currentRotation = rotationAtLastSolstice + rotatedSinceSolstice + offset;
 
         transform.rotation = _initialRotation * Quaternion.AngleAxis(
-            offset - degreesRotated,
+            (float)currentRotation,
             Vector3.up);
     }
 }

@@ -5,6 +5,7 @@ tell where the moon is now, and where it's going to be in the future.
 
 # todo
 - fix earth rotation so time is correct
+- move time offset calcs to time controller? add time since dec solstice?
 - ui: time forward/back slider
 - fix moon orbit position so that it's correct relative to real time
 - tilt moon, incline orbit
@@ -37,3 +38,4 @@ tell where the moon is now, and where it's going to be in the future.
     - https://en.wikipedia.org/wiki/Orbit_of_the_Moon
     - https://en.wikipedia.org/wiki/Retrograde_and_prograde_motion
 - there are 366 days in a [sidereal year](https://en.wikipedia.org/wiki/Sidereal_time)
+- the December solstice isn't always on the 21st December: https://en.wikipedia.org/wiki/Summer_solstice
