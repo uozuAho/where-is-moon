@@ -22,6 +22,11 @@ public class EarthController : MonoBehaviour
         OrbitSun();
     }
 
+    public int one()
+    {
+        return 1;
+    }
+
     private void OrbitSun()
     {
         // 'zero' earth pos in Unity = (0, 0, 60), December solstice

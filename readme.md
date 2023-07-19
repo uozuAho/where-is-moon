@@ -3,7 +3,17 @@
 Realistically simulate the Moon's position relative to Earth, so that you can
 tell where the moon is now, and where it's going to be in the future.
 
+# setup
+- install unity
+- open this project in unity
+- run tests: unity -> window -> general -> test runner -> edit mode -> run all
+- run sim: click play
+    - controls:
+        - space = pause
+
 # todo
+- extract earth calcs to testable class
+- run tests with rider
 - fix earth rotation so time is correct
 - move time offset calcs to time controller? add time since dec solstice?
 - ui: time forward/back slider
