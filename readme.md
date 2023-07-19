@@ -36,3 +36,4 @@ tell where the moon is now, and where it's going to be in the future.
       the Earth
     - https://en.wikipedia.org/wiki/Orbit_of_the_Moon
     - https://en.wikipedia.org/wiki/Retrograde_and_prograde_motion
+- there are 366 days in a [sidereal year](https://en.wikipedia.org/wiki/Sidereal_time)
