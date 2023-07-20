@@ -39,6 +39,6 @@ public class EarthCalcs
         var degrees = -360 * siderealDays % 360;
         var rotation = Quaternion.Euler(0, (float)degrees, 0).normalized;
 
-        return rotation * _referenceRotation;
+        return _referenceRotation * rotation;
     }
 }

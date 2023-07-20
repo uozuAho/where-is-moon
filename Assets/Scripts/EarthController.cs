@@ -12,8 +12,8 @@ public class EarthController : MonoBehaviour
 
         _earthCalcs.SetReference(
             new Vector3(0, 0, 60),               // z is north in Unity coords
-            Quaternion.Euler(-23.4f, 0, 0),      // north pole tilted towards sun (Dec solstice)
-            new DateTime(2022, 12, 21, 21, 48, 0, DateTimeKind.Utc)); // Time of last Dec solstice from Wikipedia
+            Quaternion.Euler(-23.4f, 0, 0),      // north pole tilted towards sun (Jun solstice)
+            new DateTime(2023, 6, 21, 15, 58, 0, DateTimeKind.Utc)); // Time of last Jun solstice from Wikipedia
     }
 
     void Update()

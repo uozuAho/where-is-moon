@@ -13,7 +13,6 @@ tell where the moon is now, and where it's going to be in the future.
 
 # todo
 - fix earth rotation so time is correct
-- fix earth rotation so tilt is correct. north pole should point away from sun in June
 - ui: time forward/back slider
 - fix moon orbit position so that it's correct relative to real time
 - tilt moon, incline orbit
