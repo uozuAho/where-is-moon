@@ -8,5 +8,10 @@ namespace Tests.Utils
         {
             return new VectorConstraint(expected, 0.05f);
         }
+
+        public static QuaternionConstraint CloseTo(Quaternion expected)
+        {
+            return new QuaternionConstraint(expected, 0.05f);
+        }
     }
 }

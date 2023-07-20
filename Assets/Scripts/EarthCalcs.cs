@@ -31,8 +31,8 @@ public class EarthCalcs
         var deltaTime = time - _referenceTime;
         var siderealDays = deltaTime.TotalHours / hoursPerSiderealDay;
         // note that Unity's coordinates are left handed
-        var degrees = -360 * siderealDays;
-        var rotation = Quaternion.Euler(0, (float)degrees, 0);
+        var degrees = -360 * siderealDays % 360;
+        var rotation = Quaternion.Euler(0, (float)degrees, 0).normalized;
 
         return rotation * _referenceRotation;
     }

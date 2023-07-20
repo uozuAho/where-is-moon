@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Tests\EarthCalcsTests.cs" />
      <Compile Include="Assets\Tests\Utils\VectorConstraint.cs" />
+     <Compile Include="Assets\Tests\Utils\QuaternionConstraint.cs" />
      <Compile Include="Assets\Tests\Utils\Is.cs" />
      <Folder Include="Assets\Tests\Utils" />
      <Folder Include="Assets\Tests" />

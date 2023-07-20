@@ -49,16 +49,29 @@ namespace Tests
         }
 
         [Test]
-        public void Rotation_after_one_day_is_starting_rotation()
+        public void Rotation_after_one_sidereal_day_is_starting_rotation()
         {
             var position = new Vector3(0, 0, 10);
             var startingRotation = Quaternion.Euler(0, 0, 0);
             var time = new System.DateTime(2020, 1, 1, 12, 0, 0);
-            var oneDayLater = time.AddDays(1);
+            var oneDayLater = time.AddHours(23.9344696);
 
             _earthCalcs.SetReference(position, startingRotation, time);
 
-            Assert.AreEqual(startingRotation, _earthCalcs.Rotation(oneDayLater));
+            Assert.That(_earthCalcs.Rotation(oneDayLater), Is.CloseTo(startingRotation));
+        }
+
+        [Test]
+        public void Rotation_after_quarter_sidereal_day_is_90_degrees()
+        {
+            var position = new Vector3(0, 0, 10);
+            var startingRotation = Quaternion.Euler(0, 0, 0);
+            var time = new System.DateTime(2020, 1, 1, 12, 0, 0);
+            var oneDayLater = time.AddHours(23.9344696 / 4);
+            _earthCalcs.SetReference(position, startingRotation, time);
+            var expectedRotation = startingRotation * Quaternion.AngleAxis(-90, Vector3.up);
+
+            Assert.That(_earthCalcs.Rotation(oneDayLater), Is.CloseTo(expectedRotation));
         }
     }
 }
