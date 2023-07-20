@@ -10,9 +10,9 @@ tell where the moon is now, and where it's going to be in the future.
 - run sim: click play
     - controls:
         - space = pause
+        - left/right = -/+ 1 hour
 
 # todo
-- ui: time forward/back
 - fix earth rotation so time is correct
 - fix moon orbit position so that it's correct relative to real time
 - tilt moon, incline orbit

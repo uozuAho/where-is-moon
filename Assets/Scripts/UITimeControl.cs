@@ -15,5 +15,15 @@ public class UITimeControl : MonoBehaviour
         {
             _timeController.TogglePlayPause();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            _timeController.SetCurrentTime(_timeController.CurrentTime().AddHours(-1));
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            _timeController.SetCurrentTime(_timeController.CurrentTime().AddHours(1));
+        }
     }
 }
