@@ -12,45 +12,26 @@ public class TimeController : MonoBehaviour
     // move.
     private const float InternalRate = 864;
 
-    private float _secondsSinceYearStart;
+    private DateTime _referenceTime;
     private float _prePauseTimeScale;
-
-    // 'zero time' earth rotation is midday over Santa Cruz, Equador, -0.7869498837733746, -90.33499760536569
 
     void Start()
     {
         SetTimeRate(OneDayPerMinute);
-        var timeSinceStartOfYear = DateTime.UtcNow - new DateTime(DateTime.Now.Year, 1, 1);
-        _secondsSinceYearStart = (float)timeSinceStartOfYear.TotalSeconds;
+        SetCurrentTime(DateTime.UtcNow);
     }
 
-    public float SecondsSinceYearStart()
+    public void SetCurrentTime(DateTime time)
     {
-        return Time.time * InternalRate + _secondsSinceYearStart;
+        if (time.Kind != DateTimeKind.Utc)
+            throw new ArgumentException("Time must be UTC", nameof(time));
+
+        _referenceTime = time.AddSeconds(-SimSecondsPassed());
     }
 
-    public float DaysSinceYearStart()
+    public DateTime CurrentTime()
     {
-        return SecondsSinceYearStart() / 86400;
-    }
-
-    public float YearsSinceYearStart()
-    {
-        return SecondsSinceYearStart() / (86400 * 365);
-    }
-
-    /// <summary>
-    /// Set the rate that time passes, compared to real time.
-    /// </summary>
-    public void SetTimeRate(float rate)
-    {
-        Time.timeScale = rate / InternalRate;
-    }
-
-    public DateTime CurrentUtcTime()
-    {
-        return new DateTime(DateTime.UtcNow.Year, 1, 1, 0, 0, 0, DateTimeKind.Utc)
-            .AddSeconds(SecondsSinceYearStart());
+        return _referenceTime.AddSeconds(SimSecondsPassed());
     }
 
     public void Pause()
@@ -64,13 +45,16 @@ public class TimeController : MonoBehaviour
         Time.timeScale = _prePauseTimeScale;
     }
 
-    public DateTime LastDecSolstice()
+    public float SimSecondsPassed()
     {
-        return new DateTime(2022, 12, 21, 21, 48, 0, DateTimeKind.Utc);
+        return Time.time * InternalRate;
     }
 
-    public double SecondsSinceDecSolstice()
+    /// <summary>
+    /// Set the rate that time passes, compared to real time.
+    /// </summary>
+    private void SetTimeRate(float rate)
     {
-        return (CurrentUtcTime() - LastDecSolstice()).TotalSeconds;
+        Time.timeScale = rate / InternalRate;
     }
 }

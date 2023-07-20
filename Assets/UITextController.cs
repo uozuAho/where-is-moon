@@ -15,7 +15,7 @@ public class UITextController : MonoBehaviour
     void Update()
     {
         _currentTimeText.text = _timeController
-            .CurrentUtcTime()
+            .CurrentTime()
             .ToLocalTime()
             .ToString("yyyy-MM-dd HH:mm:ss");
     }

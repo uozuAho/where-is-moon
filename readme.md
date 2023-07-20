@@ -12,11 +12,8 @@ tell where the moon is now, and where it's going to be in the future.
         - space = pause
 
 # todo
-- extract earth calcs to testable class
-  - WIP: rotation. write test util, show rotations in euler coords
-- run tests with rider
 - fix earth rotation so time is correct
-- move time offset calcs to time controller? add time since dec solstice?
+- fix earth rotation so tilt is correct. north pole should point away from sun in June
 - ui: time forward/back slider
 - fix moon orbit position so that it's correct relative to real time
 - tilt moon, incline orbit

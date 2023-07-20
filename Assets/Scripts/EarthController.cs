@@ -18,7 +18,7 @@ public class EarthController : MonoBehaviour
 
     void Update()
     {
-        transform.position = _earthCalcs.Position(_timeController.CurrentUtcTime());
-        transform.rotation = _earthCalcs.Rotation(_timeController.CurrentUtcTime());
+        transform.position = _earthCalcs.Position(_timeController.CurrentTime());
+        transform.rotation = _earthCalcs.Rotation(_timeController.CurrentTime());
     }
 }

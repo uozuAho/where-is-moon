@@ -22,7 +22,8 @@ public class MoonController : MonoBehaviour
     private void OrbitEarth()
     {
         const double moonOrbitPeriodDays = 27.32;
-        var radians = 2 * Math.PI * _timeController.DaysSinceYearStart() / moonOrbitPeriodDays;
+        var daysPassed = _timeController.SimSecondsPassed() / 86400;
+        var radians = 2 * Math.PI * daysPassed / moonOrbitPeriodDays;
 
         transform.position = _earth.transform.position + new Vector3(
             -Mathf.Sin((float)radians) * _distanceFromEarth,
