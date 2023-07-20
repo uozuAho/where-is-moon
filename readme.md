@@ -28,6 +28,7 @@ tell where the moon is now, and where it's going to be in the future.
 - ui: show where player is on 2d earth map
 - ui: show current lat long
 - ui: user can set date and time
+- sun lens flare + halo
 - simulate libration: https://en.wikipedia.org/wiki/Libration
 - the moon's not currently to scale. Why does it look so small from Earth?
     - camera FOV? zooming in makes everything else look huge

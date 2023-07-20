@@ -7,6 +7,7 @@ public class EarthController : MonoBehaviour
     private float _distanceFromSun;
     private TimeController _timeController;
     private Quaternion _initialRotation;
+    private EarthCalcs _earthCalcs = new();
 
     void Start()
     {
@@ -14,17 +15,17 @@ public class EarthController : MonoBehaviour
         _sun = GameObject.Find("Sun").gameObject;
         _distanceFromSun = Vector3.Distance(transform.position, _sun.transform.position);
         _initialRotation = transform.rotation;
+
+        _earthCalcs.SetReference(
+            new Vector3(0, 0, 60),
+            Quaternion.Euler(-23.4f, 0, 0),
+            new DateTime(2022, 12, 21, 21, 48, 0, DateTimeKind.Utc));
     }
 
     void Update()
     {
         Rotate();
         OrbitSun();
-    }
-
-    public int one()
-    {
-        return 1;
     }
 
     private void OrbitSun()
