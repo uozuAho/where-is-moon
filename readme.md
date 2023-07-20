@@ -13,6 +13,7 @@ tell where the moon is now, and where it's going to be in the future.
 
 # todo
 - extract earth calcs to testable class
+  - WIP: rotation. write test util, show rotations in euler coords
 - run tests with rider
 - fix earth rotation so time is correct
 - move time offset calcs to time controller? add time since dec solstice?
