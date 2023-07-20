@@ -7,6 +7,8 @@ public class TimeController : MonoBehaviour
     public const float OneDayPerSecond = 100 * InternalRate;
     public const float OneDayPerMinute = OneDayPerSecond / 60;
 
+    public bool IsPaused { get; private set; }
+
     // Number of sim seconds per 1 real second. This allows
     // setting fast enough time rates to see the Earth & Moon
     // move.
@@ -37,11 +39,13 @@ public class TimeController : MonoBehaviour
     public void Pause()
     {
         _prePauseTimeScale = Time.timeScale;
+        IsPaused = true;
         Time.timeScale = 0;
     }
 
     public void Play()
     {
+        IsPaused = false;
         Time.timeScale = _prePauseTimeScale;
     }
 
@@ -56,5 +60,13 @@ public class TimeController : MonoBehaviour
     private void SetTimeRate(float rate)
     {
         Time.timeScale = rate / InternalRate;
+    }
+
+    public void TogglePlayPause()
+    {
+        if (IsPaused)
+            Play();
+        else
+            Pause();
     }
 }
