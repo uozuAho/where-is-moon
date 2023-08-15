@@ -41,4 +41,24 @@ public class EarthCalcs
 
         return _referenceRotation * rotation;
     }
+
+    /// <summary>
+    /// Returns a point on the Earth's surface (relative to its center)
+    /// at the given latitude and longitude.
+    /// </summary>
+    /// <param name="transform"></param>
+    /// <param name="latitude">Latitude. North is positive.</param>
+    /// <param name="longitude">Longitude. East is positive.</param>
+    /// <returns></returns>
+    public static Vector3 LatitudeLongitude(Transform transform, double latitude, double longitude)
+    {
+        // is this right?
+        // compare with euler
+        // also see https://en.wikipedia.org/wiki/Geographic_coordinate_system#Expressing_latitude_and_longitude_as_linear_units
+        // and https://stackoverflow.com/questions/5437865/longitude-latitude-to-quaternion
+        var northSouth = Quaternion.AngleAxis((float)latitude, transform.forward);
+        var eastWest = Quaternion.AngleAxis(-(float)longitude, transform.up);
+
+        return eastWest * northSouth * transform.right * transform.localScale.z / 2;
+    }
 }

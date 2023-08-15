@@ -1,7 +1,9 @@
 # Where is the Moon?
 
-Realistically simulate the Moon's position relative to Earth, so that you can
-tell where the moon is now, and where it's going to be in the future.
+Little Unity learning project.
+
+Goal: Realistically simulate the Moon's position relative to Earth, so that you
+can tell where the moon is now, and where it's going to be in the future.
 
 # setup
 - install unity
@@ -13,7 +15,11 @@ tell where the moon is now, and where it's going to be in the future.
         - left/right = -/+ 1 hour
 
 # todo
-- fix earth rotation so time is correct
+- change to URP, to support solar system assets
+  - note that this still doesn't fix what seems to be incorrect texture mapping
+    of Earth's surface (lat/long coords don't match up with expected positions)
+- use full earth & moon model from solar system package
+- fix earth rotation so time is correct (?)
 - fix moon orbit position so that it's correct relative to real time
 - tilt moon, incline orbit
 - rotate moon
