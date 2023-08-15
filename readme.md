@@ -1,6 +1,6 @@
 # Where is the Moon?
 
-Little Unity learning project.
+A little Unity learning project.
 
 Goal: Realistically simulate the Moon's position relative to Earth, so that you
 can tell where the moon is now, and where it's going to be in the future.
